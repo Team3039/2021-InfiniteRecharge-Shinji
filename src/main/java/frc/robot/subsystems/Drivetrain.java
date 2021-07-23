@@ -2,12 +2,10 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
-import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import frc.robot.RobotMap;
 import frc.robot.RobotContainer;
+import frc.robot.RobotMap;
 
 public class Drivetrain {
     
@@ -22,20 +20,28 @@ public class Drivetrain {
         leftRearMotor.follow(leftFrontMotor);
         rightRearMotor.follow(leftFrontMotor);
     }
+    
     // drive using control sticks
-    public void driveTrain() {
+    public void drive() {
         double y = RobotContainer.driverpad.getLeftYAxis() * Constants.DRIVE_Y;
         double rot = RobotContainer.driverpad.getRightXAxis() * Constants.DRIVE_ROT;
 
-        double leftMotor = y - rot;
+        double leftMotor = y + rot;
         double rightMotor = rot - y;
 
-        leftFrontMotor.set(ControlMode.PercentOutput.leftMotor);
-        rightFrontMotor.set(ControlMode.PercentOutput.rightMotor);
+        leftFrontMotor.set(ControlMode.PercentOutput, leftMotor);
+        rightFrontMotor.set(ControlMode.PercentOutput, rightMotor);
+    }
+
+    // stop drive motors
+    public void stopDrive() {
+        leftFrontMotor.set(ControlMode.PercentOutput, 0);
+        rightFrontMotor.set(ControlMode.PercentOutput, 0);
     }
 
 
-
-
+    public void periodic() {
+        drive();
+    }
     
 }

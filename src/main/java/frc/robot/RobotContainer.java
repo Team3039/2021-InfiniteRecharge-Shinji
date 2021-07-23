@@ -7,8 +7,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
-
 import frc.robot.controllers.PS4Gamepad;
+import frc.robot.subsystems.Drivetrain;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -21,7 +21,7 @@ public class RobotContainer {
 
    public static PS4Gamepad driverpad = new PS4Gamepad(0);
 
-}
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -45,4 +45,7 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
   
+    return null;
+  }
+
 }
