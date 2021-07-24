@@ -39,6 +39,13 @@ public class Drivetrain {
         rightFrontMotor.set(ControlMode.PercentOutput, 0);
     }
 
+    // Auto Methods
+
+    public void driveforward(double speed) {
+        leftFrontMotor.set(ControlMode.PercentOutput, speed);
+        rightFrontMotor.set(ControlMode.PercentOutput, speed);
+    }
+
 
     public void periodic() {
         drive();
