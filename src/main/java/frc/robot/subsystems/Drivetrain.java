@@ -8,7 +8,7 @@ import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.RobotMap;
 
-public class Drivetrain {
+public class Drivetrain extends SubsystemBase {
     
     TalonFX leftFrontMotor = new TalonFX(RobotMap.leftFrontMotor);
     TalonFX leftRearMotor = new TalonFX(RobotMap.leftRearMotor);
@@ -22,10 +22,10 @@ public class Drivetrain {
         rightRearMotor.follow(leftFrontMotor);
     }
     
-    // drive using control sticks
+    // drive using control sticks (probably need to flip rightx and lefty and flip the leftmotor and right motor calculations in order to have a )
     public void drive() {
-        double y = RobotContainer.driverpad.getLeftYAxis() * Constants.DRIVE_Y;
-        double rot = RobotContainer.driverpad.getRightXAxis() * Constants.DRIVE_ROT;
+        double y = RobotContainer.driverPad.getRightXAxis() * Constants.DRIVE_Y;
+        double rot = RobotContainer.driverPad.getLeftYAxis() * Constants.DRIVE_ROT * -1;
 
         double leftMotor = y + rot;
         double rightMotor = rot - y;

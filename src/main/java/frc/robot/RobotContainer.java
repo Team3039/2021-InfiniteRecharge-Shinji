@@ -7,8 +7,11 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.Button;
+import frc.robot.Commands.RunRevolver;
 import frc.robot.controllers.PS4Gamepad;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Revolver;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -18,8 +21,11 @@ import frc.robot.subsystems.Drivetrain;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
    public static Drivetrain drivetrain = new Drivetrain();
+   public static Revolver revolver = new Revolver();
 
-   public static PS4Gamepad driverpad = new PS4Gamepad(0);
+   public static PS4Gamepad driverPad = new PS4Gamepad(0);
+
+   Button driverL2 = driverPad.getL2();
 
 
 
@@ -35,7 +41,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+    
+    driverL2.whileHeld(new RunRevolver());
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

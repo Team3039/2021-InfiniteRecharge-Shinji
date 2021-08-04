@@ -14,8 +14,14 @@ package frc.robot;
  */
 public final class Constants {
 
- public static final double DRIVE_Y = 0.7;
- public static final double DRIVE_ROT = 0.4;
+// Drive
+ public static final double DRIVE_Y = 0.9;
+ public static final double DRIVE_ROT = 0.8;
+
+// Revolver
+ public static final double REVOLVER_SPEED = 0.2;
+
+
 
 
 
