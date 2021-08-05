@@ -5,7 +5,6 @@
 package frc.robot.subsystems;
 
 
-
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -22,14 +21,14 @@ public class Revolver extends SubsystemBase {
 
 
 
-
- public void spinRevolver() {
-     revolver.set(Constants.REVOLVER_SPEED);
+//this method spins the revolver at the speed given to it
+ public void revolverSpeed(double speed) {
+     revolver.set(speed);
  }
 
- public void stopRevolver() {
-     revolver.set(0);
- }
+ //public void stopRevolver() {
+     //revolver.set(0);
+//}
 
 
 

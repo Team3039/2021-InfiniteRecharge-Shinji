@@ -16,7 +16,7 @@ public class Drivetrain extends SubsystemBase {
     TalonFX rightRearMotor = new TalonFX(RobotMap.rightRearMotor);
 
 
-    // the rear motors will follow what happens to the front motors
+    //the rear motors will follow what happens to the front motors
     public void rearFollow() {
         leftRearMotor.follow(leftFrontMotor);
         rightRearMotor.follow(leftFrontMotor);

@@ -5,7 +5,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import frc.robot.Commands.RunRevolver;
@@ -23,6 +22,8 @@ public class RobotContainer {
    public static Drivetrain drivetrain = new Drivetrain();
    public static Revolver revolver = new Revolver();
 
+  
+
    public static PS4Gamepad driverPad = new PS4Gamepad(0);
 
    Button driverL2 = driverPad.getL2();
@@ -31,16 +32,10 @@ public class RobotContainer {
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    // Configure the button bindings
     configureButtonBindings();
   }
 
-  /**
-   * Use this method to define your button->command mappings. Buttons can be created by
-   * instantiating a {@link GenericHID} or one of its subclasses ({@link
-   * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
-   * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
-   */
+
   private void configureButtonBindings() {
     
     driverL2.whileHeld(new RunRevolver());
