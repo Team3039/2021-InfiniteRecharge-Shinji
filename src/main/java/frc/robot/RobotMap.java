@@ -9,10 +9,10 @@ public class RobotMap {
   // Talons
     
     // Drive
-      public static int leftFrontMotor = 3;
-      public static int leftRearMotor = 2; 
-      public static int rightFrontMotor = 0;
-      public static int rightRearMotor = 1;
+      public static int leftFrontMotor = 3; // RR
+      public static int leftRearMotor = 2;  //RL
+      public static int rightFrontMotor = 0; //LL
+      public static int rightRearMotor = 1; //LR
 
   // Sparks
       

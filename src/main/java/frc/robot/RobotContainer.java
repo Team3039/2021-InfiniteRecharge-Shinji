@@ -22,13 +22,9 @@ public class RobotContainer {
    public static Drivetrain drivetrain = new Drivetrain();
    public static Revolver revolver = new Revolver();
 
-  
-
    public static PS4Gamepad driverPad = new PS4Gamepad(0);
 
    Button driverL2 = driverPad.getL2();
-
-
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -37,7 +33,6 @@ public class RobotContainer {
 
 
   private void configureButtonBindings() {
-    
     driverL2.whileHeld(new RunRevolver());
   }
 

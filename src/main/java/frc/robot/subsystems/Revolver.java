@@ -5,7 +5,9 @@
 package frc.robot.subsystems;
 
 
-import edu.wpi.first.wpilibj.Spark;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import frc.robot.Constants;
@@ -17,12 +19,10 @@ import frc.robot.RobotMap;
 /** Add your docs here. */
 public class Revolver extends SubsystemBase {
 
- public Spark revolver = new Spark(RobotMap.revolverMotor);
+ public CANSparkMax revolver = new CANSparkMax(RobotMap.revolverMotor, MotorType.kBrushed);
 
-
-
-//this method spins the revolver at the speed given to it
- public void revolverSpeed(double speed) {
+//this method spins the revolver at the speed given to it (which can also be 0, aka no spin)
+ public void revolverSpin(double speed) {
      revolver.set(speed);
  }
 
