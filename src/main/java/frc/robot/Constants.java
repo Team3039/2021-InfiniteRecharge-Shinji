@@ -19,11 +19,8 @@ public final class Constants {
  public static final double DRIVE_ROT = 0.90;
 
 // Revolver
- public static final double REVOLVER_SPEED = 0.2;
+ public static final double REVOLVER_SPEED = 0.40;
 
-
-
-
-
-
+// Intake
+ public static final double INTAKE_SPEED = 0.3;
 }

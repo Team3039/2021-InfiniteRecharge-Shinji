@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -17,16 +18,21 @@ public class Drivetrain extends SubsystemBase {
 
     public Drivetrain() {
         rightRearMotor.setInverted(true);
+
+        leftFrontMotor.setNeutralMode(NeutralMode.Brake);
+        leftRearMotor.setNeutralMode(NeutralMode.Brake);
+        rightFrontMotor.setNeutralMode(NeutralMode.Brake);
+        rightRearMotor.setNeutralMode(NeutralMode.Brake);
         
-        //leftRearMotor.follow(leftFrontMotor);
-        //rightRearMotor.follow(rightFrontMotor);
+        leftRearMotor.follow(leftFrontMotor);
+        rightRearMotor.follow(rightFrontMotor);
     }
 
     //the rear motors will follow what happens to the front motors
-     //  public void rearFollow() {
-        //   leftRearMotor.follow(leftFrontMotor);
-        //   rightRearMotor.follow(leftFrontMotor);
-    // }
+       //public void rearFollow() {
+         // leftRearMotor.follow(leftFrontMotor);
+         // rightRearMotor.follow(leftFrontMotor);
+     //}
     
     // drive using control sticks (probably need to flip rightx and lefty and flip the leftmotor and right motor calculations in order to have a )
     public void drive() {
@@ -40,8 +46,8 @@ public class Drivetrain extends SubsystemBase {
         // Assigns Each Motor's Power
         leftFrontMotor.set(ControlMode.PercentOutput, leftOutput);
         rightFrontMotor.set(ControlMode.PercentOutput, rightOutput);
-        leftRearMotor.set(ControlMode.PercentOutput, leftOutput);
-        rightRearMotor.set(ControlMode.PercentOutput, rightOutput);
+        //leftRearMotor.set(ControlMode.PercentOutput, leftOutput);
+        //rightRearMotor.set(ControlMode.PercentOutput, rightOutput);
     }
 
     // stop drive motors
