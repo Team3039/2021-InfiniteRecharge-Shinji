@@ -34,7 +34,7 @@ public class Drivetrain extends SubsystemBase {
          // rightRearMotor.follow(leftFrontMotor);
      //}
     
-    // drive using control sticks (probably need to flip rightx and lefty and flip the leftmotor and right motor calculations in order to have a )
+    // drive using control sticks
     public void drive() {
         double y = -1 * RobotContainer.driverPad.getLeftYAxis() * Constants.DRIVE_Y;
         double rot = RobotContainer.driverPad.getRightXAxis() * Constants.DRIVE_ROT;
