@@ -6,19 +6,21 @@ package frc.robot.Commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
-import frc.robot.Constants;
+import frc.robot.subsystems.Shooter;
 
-public class RunRevolver extends CommandBase {
-  /** Creates a new RunRevolver. */
-  public RunRevolver() {
-    addRequirements(RobotContainer.revolver);   
+public class StartShooter extends CommandBase {
+  /** Creates a new StartShooter. */
+  double speed;
+  public StartShooter(double speed) {
+    this.speed = speed;
+    addRequirements(RobotContainer.shooter);
+    // Use addRequirements() here to declare subsystem dependencies.
   }
-
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.revolver.revolverSpin(Constants.REVOLVER_SPEED);
+    RobotContainer.shooter.setShooterSpeed(speed);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -28,7 +30,7 @@ public class RunRevolver extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    RobotContainer.revolver.revolverSpin(0);
+    RobotContainer.shooter.setShooterSpeed(0);
   }
 
   // Returns true when the command should end.

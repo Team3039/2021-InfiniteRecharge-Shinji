@@ -14,6 +14,11 @@ public class RobotMap {
       public static int rightFrontMotor = 0; //LL
       public static int rightRearMotor = 1; //LR
 
+    // Shooter
+      public static int shooterA = 4;
+      public static int shooterB = 5;
+      
+     
   // Sparks
 
       public static int IntakeMotor = 0;  

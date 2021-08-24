@@ -10,14 +10,19 @@ import frc.robot.RobotContainer;
 
 public class IntakeActuate extends CommandBase {
   /** Creates a new IntakeActuate. */
-  public IntakeActuate() {
+  boolean actuated;
+  public IntakeActuate(boolean actuaded) {
+    this.actuated = actuated;
+
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.intake);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    RobotContainer.intake.actuateIntake(actuated);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
@@ -25,7 +30,10 @@ public class IntakeActuate extends CommandBase {
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    RobotContainer.intake.actuateIntake(false);
+  }
+
 
   // Returns true when the command should end.
   @Override

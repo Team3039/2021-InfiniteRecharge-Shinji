@@ -11,7 +11,9 @@ import frc.robot.RobotContainer;
 
 public class RunIntake extends CommandBase {
   /** Creates a new RunIntake. */
-  public RunIntake() {
+  boolean actuated;
+  public RunIntake(boolean actuaded) {
+    this.actuated = actuated;
     addRequirements(RobotContainer.intake);
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -20,13 +22,12 @@ public class RunIntake extends CommandBase {
   @Override
   public void initialize() {
     RobotContainer.intake.actuateIntake(true);
+    RobotContainer.intake.runIntake(Constants.INTAKE_SPEED); 
   }
 //actuate intake, run wheels, delease
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    RobotContainer.intake.runIntake(Constants.INTAKE_SPEED); 
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override

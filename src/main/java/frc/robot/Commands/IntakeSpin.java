@@ -17,13 +17,14 @@ public class IntakeSpin extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {  
+    RobotContainer.intake.runIntake(Constants.INTAKE_SPEED);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    RobotContainer.intake.runIntake(Constants.INTAKE_SPEED);
-  }
+  public void execute() {}
+  
 
   // Called once the command ends or is interrupted.
   @Override

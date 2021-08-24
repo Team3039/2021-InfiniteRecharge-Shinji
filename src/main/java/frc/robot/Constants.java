@@ -23,4 +23,14 @@ public final class Constants {
 
 // Intake
  public static final double INTAKE_SPEED = 0.3;
+
+// Shooter
+
+// Yes Camera
+
+// No Camera
+ public static final double NEAR_SHOT_SPEED = .3;
+ public static final double NEAR_MID_SHOT_SPEED = .5;
+ public static final double FAR_MID_SHOT_SPEED = .7;
+ public static final double FAR_SHOT_SPEED = .9;
 }
