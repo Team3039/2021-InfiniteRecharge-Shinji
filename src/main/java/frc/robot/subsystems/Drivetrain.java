@@ -57,9 +57,11 @@ public void stopDrive() {
         rightFrontMotor.set(ControlMode.PercentOutput, 0);
     }
 
-    public void driveforward(double speed) {
+    public void driveForward(double speed) {
         leftFrontMotor.set(ControlMode.PercentOutput, speed);
         rightFrontMotor.set(ControlMode.PercentOutput, speed);
+        leftRearMotor.set(ControlMode.PercentOutput, speed);
+        rightRearMotor.set(ControlMode.PercentOutput, speed);
     }
 
     public void periodic() {

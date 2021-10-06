@@ -6,18 +6,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Button;
-import frc.robot.Commands.IntakeActuate;
-import frc.robot.Commands.IntakeSpin;
-import frc.robot.Commands.RunIntake;
-import frc.robot.Commands.RunRevolver;
-import frc.robot.Commands.SetDistanceCounter;
-import frc.robot.Commands.StartShooter;
-import frc.robot.Commands.StartShooterNoCam;
+
 import frc.robot.controllers.PS4Gamepad;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.Revolver;
-import frc.robot.subsystems.Shooter;
+
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -27,9 +19,6 @@ import frc.robot.subsystems.Shooter;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
    public static Drivetrain drivetrain = new Drivetrain();
-   public static Revolver revolver = new Revolver();
-   public static Intake intake = new Intake();
-   public static Shooter shooter = new Shooter();
 
    public static PS4Gamepad driverPad = new PS4Gamepad(0);
    public static PS4Gamepad operatorPad = new PS4Gamepad(1);
@@ -86,26 +75,8 @@ public class RobotContainer {
 
 
   private void configureButtonBindings() {
-    operatorL2.whileHeld(new RunRevolver());
- 
-    operatorSquare.whileHeld(new RunIntake(true));
-
-    operatorDPadDown.whenPressed(new SetDistanceCounter(0));
-    operatorDPaLeft.whenPressed(new SetDistanceCounter(1));
-    operatorDPadRight.whenPressed(new SetDistanceCounter(2));
-    operatorDPadUp.whenPressed(new SetDistanceCounter(3));
-
-    operatorR2.toggleWhenPressed(new StartShooterNoCam());
 
     //operatorR2.toggleWhenPressed(new StartShooter());
-    
-    operatorShare.toggleWhenPressed(new IntakeActuate(true));
-    operatorOptions.whileHeld(new IntakeSpin());
-
-    driverDPadDown.whenPressed(new SetDistanceCounter(0));
-    driverDPadLeft.whenPressed(new SetDistanceCounter(1));
-    driverDPadRight.whenPressed(new SetDistanceCounter(2));
-    driverDPadUp.whenPressed(new SetDistanceCounter(3));
 
   }
 
