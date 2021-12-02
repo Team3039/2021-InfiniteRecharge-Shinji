@@ -2,6 +2,7 @@ package frc.robot;
 
 public class RobotMap {
 
+
     //Controllers
     
       public final static int DRIVER_JOYSTICK_1_USB_ID = 0; 
@@ -21,13 +22,10 @@ public class RobotMap {
      
   // Sparks
 
-      public static int IntakeMotor = 0;  
-
-      public static int revolverMotor = 1;
+      public static int climber = 0;
 
   // Solenoids
     
-      public static int intakeTilt = 3;
     
 
 
