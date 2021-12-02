@@ -4,47 +4,30 @@
 
 package frc.robot.auto.commands;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-
-import edu.wpi.first.wpilibj2.command.CommandBase;
-
-public class AutoDrive extends CommandBase { 
-  /** Creates a new AutoDrive. */
-
- 
- //  edu.wpi.first.wpilibj.Timer timer;
- //  double seconds;
-
- 
-  public AutoDrive() {
- //   timer = new edu.wpi.first.wpilibj.Timer();
- //   this.seconds = seconds;
+public class AutoStop extends CommandBase {
+  /** Creates a new AutoStop. */
+  public AutoStop() {
+    
+    
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-  //   timer.reset();
-  //   timer.start();
- 
+    RobotContainer.drivetrain.stopDrive();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
- //    while (timer.get() < seconds) {   
-       RobotContainer.drivetrain.driveForward(.2);
-    }
-  
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
-     RobotContainer.drivetrain.stopDrive();
-  }
+  public void end(boolean interrupted) {}
 
   // Returns true when the command should end.
   @Override

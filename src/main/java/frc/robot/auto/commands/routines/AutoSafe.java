@@ -2,10 +2,12 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.auto;
+package frc.robot.auto.commands.routines;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.auto.commands.AutoDrive;
+import edu.wpi.first.wpilibj2.command.WaitCommand;
+import frc.robot.auto.commands.AutoForward;
+import frc.robot.auto.commands.AutoStop;
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
@@ -13,10 +15,11 @@ import frc.robot.auto.commands.AutoDrive;
 public class AutoSafe extends SequentialCommandGroup {
   /** Creates a new AutoSafe. */
   public AutoSafe() {
-    // Add your commands in the addCommands() call, e.g.
-    // addCommands(new FooCommand(), new BarCommand());
-    addCommands(
-      new AutoDrive(2)
+
+    super(new WaitCommand(10),
+    new AutoForward(),
+    new WaitCommand(2.5),
+    new AutoStop()
     );
   }
 }
