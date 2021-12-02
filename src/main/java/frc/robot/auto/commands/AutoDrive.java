@@ -4,8 +4,6 @@
 
 package frc.robot.auto.commands;
 
-import java.util.Timer;
-import java.util.TimerTask;
 import frc.robot.RobotContainer;
 
 
@@ -15,20 +13,14 @@ public class AutoDrive extends CommandBase {
   /** Creates a new AutoDrive. */
 
  
- //  edu.wpi.first.wpilibj.Timer timer;
- //  double seconds;
-
- 
   public AutoDrive() {
- //   timer = new edu.wpi.first.wpilibj.Timer();
- //   this.seconds = seconds;
+
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-  //   timer.reset();
-  //   timer.start();
+
  
   }
 

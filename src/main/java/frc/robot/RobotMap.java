@@ -19,12 +19,12 @@ public class RobotMap {
       public static int shooterA = 4;
       public static int shooterB = 5;
       
-     
   // Sparks (PWM)
 
       public static int climber = 2;
       public static int robotRaise = 0;
       public static int robotRaise2 = 1;
+
 
   // Solenoids
     
